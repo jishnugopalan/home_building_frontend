@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'architect_menu.dart';
+
 class ArchitectureHome extends StatefulWidget {
   const ArchitectureHome({Key? key}) : super(key: key);
 
@@ -29,57 +31,9 @@ class _ArchitectureHomeState extends State<ArchitectureHome> {
           appBar: AppBar(
             title: Text('Architecture Home'),
           ),
-          drawer: Drawer(
-            child: ListView(
-              children: [
-                UserAccountsDrawerHeader(
-                  accountName: Text('Gopika Venugopal', style: TextStyle(fontSize: 25)),
-                  accountEmail: Text('tenddygopz@gmail.com'),
-                  currentAccountPicture: CircleAvatar(
-                    backgroundImage: AssetImage('assets/profileAvatar.png'),
-                  ),
-                ),
-                ListTile(
-                  leading: Icon(Icons.home),
-                  title: Text('Home'),
-                  onTap: () {
-                     Navigator.pushNamed(context, '/architectureHome');
-                  },
-                ),
-                ListTile(
-                  leading: Icon(Icons.person),
-                  title: Text('Profile'),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/profile');
-                  },
-                ),
-                ListTile(
-                  leading: Icon(Icons.collections),
-                  title: Text('Add Work'),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/addworkarchi');
-                  },
-                ),
-                ListTile(
-                  leading: Icon(Icons.settings),
-                  title: Text('Settings'),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/settings');
-                  },
-                ),
-                Divider(),
-                ListTile(
-                  leading: Icon(Icons.logout),
-                  title: Text('Logout'),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/login');
-                  },
-                ),
-              ],
-            ),
-          ),
+          drawer: ArchitechtMenu(),
           body: Center(
-            child: Text('Welcome to Interior Designer App!'),
+            child: Text('Welcome'),
           ),
         ));
   }

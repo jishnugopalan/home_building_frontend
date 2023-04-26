@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'electrician_menu.dart';
+
 class ElectricianHome extends StatefulWidget {
   const ElectricianHome({Key? key}) : super(key: key);
 
@@ -27,57 +29,11 @@ class _ElectricianHomeState extends State<ElectricianHome> {
         },
         child: Scaffold(
           appBar: AppBar(
-            title: Text('Electrician Home'),
+            title: Text('Home'),
           ),
-          drawer: Drawer(
-            child: ListView(
-              children: [
-                UserAccountsDrawerHeader(
-                  accountName: Text('Jishnu Gopal', style: TextStyle(fontSize: 25)),
-                  accountEmail: Text('jishnu@gmail.com'),
-                  currentAccountPicture: CircleAvatar(
-                    backgroundImage: AssetImage('assets/profileAvatar.png'),
-                  ),
-                ),
-                ListTile(
-                  leading: Icon(Icons.home),
-                  title: Text('Home'),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/electricianHome');
-                  },
-                ),
-                ListTile(
-                  leading: Icon(Icons.person),
-                  title: Text('Profile'),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/profile');
-                  },
-                ),
-                ListTile(
-                  leading: Icon(Icons.collections),
-                  title: Text('Portfolio'),
-                  onTap: () {},
-                ),
-                ListTile(
-                  leading: Icon(Icons.settings),
-                  title: Text('Settings'),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/settings');
-                  },
-                ),
-                Divider(),
-                ListTile(
-                  leading: Icon(Icons.logout),
-                  title: Text('Logout'),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/login');
-                  },
-                ),
-              ],
-            ),
-          ),
+          drawer: ElecticianMenu(),
           body: Center(
-            child: Text('Welcome to Interior Designer App!'),
+            child: Text('Welcome'),
           ),
         ));
   }

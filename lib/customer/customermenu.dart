@@ -34,6 +34,13 @@ class _CustomerMenuState extends State<CustomerMenu> {
               Navigator.pushNamed(context, '/myconnections');
             },
           ),
+          ListTile(
+            leading: Icon(Icons.note_add_outlined),
+            title: Text('My Quotations'),
+            onTap: () {
+              Navigator.pushNamed(context, '/viewquotationcustomer');
+            },
+          ),
           // ListTile(
           //   leading: Icon(Icons.person),
           //   title: Text('Profile'),

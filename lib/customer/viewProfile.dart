@@ -129,7 +129,7 @@ class _ViewProfileState extends State<ViewProfile> {
         appBar: AppBar(
           title: Text('Profile'),
         ),
-        drawer: CustomerMenu(),
+
         body: Padding(
             padding: EdgeInsets.all(MediaQuery.of(context).size.height * .02),
             child: ListView(
@@ -151,7 +151,7 @@ class _ViewProfileState extends State<ViewProfile> {
                       ),
                     ),
                     Text(
-                      'Interior Designer',
+                      data["user"]["usertype"].toString().toUpperCase(),
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.grey[600],

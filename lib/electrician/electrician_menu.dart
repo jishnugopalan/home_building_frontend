@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class InteriorMenu extends StatefulWidget {
-  const InteriorMenu({Key? key}) : super(key: key);
+class ElecticianMenu extends StatefulWidget {
+  const ElecticianMenu({Key? key}) : super(key: key);
 
   @override
-  State<InteriorMenu> createState() => _InteriorMenuState();
+  State<ElecticianMenu> createState() => _ElecticianMenuState();
 }
 
-class _InteriorMenuState extends State<InteriorMenu> {
+class _ElecticianMenuState extends State<ElecticianMenu> {
   final storage = FlutterSecureStorage();
   @override
   Widget build(BuildContext context) {
@@ -16,15 +16,15 @@ class _InteriorMenuState extends State<InteriorMenu> {
       child: ListView(
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text('Interior Dashboard', style: TextStyle(fontSize: 25)),
-            accountEmail: Text(''),
-            currentAccountPicture: Icon(Icons.account_circle,color: Colors.white,size: 50,)
+              accountName: Text('Electrician Dashboard', style: TextStyle(fontSize: 25)),
+              accountEmail: Text(''),
+              currentAccountPicture: Icon(Icons.account_circle,color: Colors.white,size: 50,)
           ),
           ListTile(
             leading: Icon(Icons.home),
             title: Text('Home'),
             onTap: () {
-              Navigator.pushNamed(context, '/interiorHome');
+              Navigator.pushNamed(context, '/electricianHome');
             },
           ),
           // ListTile(
@@ -76,9 +76,9 @@ class _InteriorMenuState extends State<InteriorMenu> {
             onTap: () async {
 
 
-                await storage.delete(key: "token");
-                Navigator.of(context)
-                    .pushNamedAndRemoveUntil('/login', (Route<dynamic> route) => false);
+              await storage.delete(key: "token");
+              Navigator.of(context)
+                  .pushNamedAndRemoveUntil('/login', (Route<dynamic> route) => false);
 
 
             },

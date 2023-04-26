@@ -33,7 +33,7 @@ class _InteriorDesignerHomeState extends State<InteriorDesignerHome> {
           ),
           drawer: InteriorMenu(),
           body: Center(
-            child: Text('Welcome to Interior Designer App!'),
+            child: Text('Welcome'),
           ),
         ));
   }

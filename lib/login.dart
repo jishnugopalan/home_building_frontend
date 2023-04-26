@@ -74,6 +74,10 @@ class _LoginScreenState extends State<LoginScreen> {
          Navigator.pushNamedAndRemoveUntil(context, '/electricianHome', (route) => false);
 
        }
+       else if(res.data["user"]["usertype"]=="admin"){
+         Navigator.pushNamedAndRemoveUntil(context, '/adminhome', (route) => false);
+
+       }
 
 
 
@@ -156,6 +160,10 @@ class _LoginScreenState extends State<LoginScreen> {
       }
       else if(response?.data["usertype"]=="electrician"){
         Navigator.pushNamedAndRemoveUntil(context, '/electricianHome', (route) => false);
+
+      }
+      else if(response?.data["usertype"]=="admin"){
+        Navigator.pushNamedAndRemoveUntil(context, '/adminhome', (route) => false);
 
       }
 

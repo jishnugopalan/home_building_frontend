@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:homebuilding/customer/customermenu.dart';
+import 'package:homebuilding/customer/viewconnections.dart';
+import 'package:homebuilding/interiorDesigner/viewconnections.dart';
 import 'package:homebuilding/services/workservice.dart';
 
 
@@ -73,8 +75,15 @@ class _MyConnectionsState extends State<MyConnections> {
           return ListTile(
             title: Text(data[index]["worker"][0]["name"]),
             leading: Icon(Icons.account_circle,size: 50,color: Colors.orange,),
-            subtitle: Text(data[index]["status"]),
+            subtitle: Text(data[index]["worker"][0]["usertype"]+"\n"+data[index]["status"]),
             tileColor: data[index]['status']=="request sent"?Colors.grey[200]:Colors.white10,
+            onTap: (){
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ViewConnectedVendors(workerid: data[index]["worker"][0]["_id"], status: data[index]["status"], usertype: data[index]["worker"][0]["usertype"],),
+                ),
+              );
+            },
           );
 
       }

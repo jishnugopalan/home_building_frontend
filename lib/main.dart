@@ -16,9 +16,12 @@ import 'package:homebuilding/customer/architectList.dart';
 import 'package:homebuilding/customer/electricianList.dart';
 import 'package:homebuilding/customer/viewProfile.dart';
 
+import 'admin/adminhome.dart';
 import 'customer/myconnections.dart';
+import 'customer/myquotations.dart';
 import 'interiorDesigner/myprofile.dart';
 import 'interiorDesigner/viewconnections.dart';
+import 'interiorDesigner/viewquotations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -54,7 +57,10 @@ class MyApp extends StatelessWidget {
         '/electricianlist': (context) => ElectricianProfileList(),
         '/chatwindow': (context) => ChatScreen(),
         '/myconnections':(context)=>MyConnections(),
-        '/viewconnections':(context)=>ViewConnections()
+        '/viewconnections':(context)=>ViewConnections(),
+        '/viewquotationcustomer':(context)=>ViewQuotationsCustomer(),
+        '/viewquotationvendor':(context)=>ViewQuotationVendor(),
+        '/adminhome':(context)=>AdminHome()
 
       },
     );
